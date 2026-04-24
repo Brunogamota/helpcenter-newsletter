@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #161419;
+  --bg-card: #1c1920;
+  --bg-elevated: #211e26;
+  --border: #2a2730;
+  --border-subtle: #221f28;
+  --accent: #f72662;
+  --accent-dim: rgba(247, 38, 98, 0.12);
+  --accent-hover: #ff3d73;
+  --text-primary: #f0eff2;
+  --text-secondary: #9d9aa6;
+  --text-muted: #5a5763;
+  --text-inverted: #0e0c11;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(247, 38, 98, 0.25);
+  color: var(--text-primary);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Article content typography */
+.article-body {
+  color: var(--text-primary);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+.article-body h2 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.article-body h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.article-body p {
+  margin-bottom: 1.25rem;
+  color: #c8c5d0;
+}
+
+.article-body ul,
+.article-body ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.article-body li {
+  margin-bottom: 0.5rem;
+  color: #c8c5d0;
+}
+
+.article-body ul li {
+  list-style-type: none;
+  position: relative;
+}
+
+.article-body ul li::before {
+  content: "—";
+  position: absolute;
+  left: -1.5rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.article-body ol {
+  list-style-type: decimal;
+}
+
+.article-body ol li::marker {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.article-body strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.article-body code {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.875em;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: 0.15em 0.45em;
+  color: #e879a0;
+}
+
+.article-body pre {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.article-body pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.875rem;
+  color: #c8c5d0;
+}
+
+.article-body blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  color: var(--text-secondary);
+}
+
+.article-body a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(247, 38, 98, 0.3);
+  transition: border-color 0.15s;
+}
+
+.article-body a:hover {
+  border-color: var(--accent);
+}
+
+.article-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+.article-body .callout {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-body .callout p {
+  margin-bottom: 0;
+}
